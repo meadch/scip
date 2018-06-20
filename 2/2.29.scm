@@ -55,3 +55,15 @@
   (is-balanced? m) ; #t
   (is-balanced? m2) ; #f
   
+; d. Suppose we change the representation of mobiles so that the constructors are
+
+; (define (make-mobile left right)
+;   (cons left right))
+; (define (make-branch length structure)
+;   (cons length structure))
+
+; How much do you need to change your programs to convert to the new representation?
+
+; The right-branch and branch-structure selectors should be updated to remove the call to car:
+  ; (define (right-branch mobile) (cdr mobile))
+  ; (define (branch-structure branch) (cdr branch))
