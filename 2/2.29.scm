@@ -19,31 +19,29 @@
 
 ; b. Using your selectors, define a procedure total-weight that returns the total weight of a mobile.
 
-
-
 (define (total-weight mobile)
-(+ (branch-weight (left-branch mobile)) 
-  (branch-weight (right-branch mobile))))
+  (+ (branch-weight (left-branch mobile)) 
+     (branch-weight (right-branch mobile))))
   
-  (define (branch-weight branch)
+(define (branch-weight branch)
   (if (pair? (branch-structure branch))
-  (total-weight (branch-structure branch))
-  (branch-structure branch)))
+    (total-weight (branch-structure branch))
+    (branch-structure branch)))
   
-  ; c. A mobile is said to be balanced if the torque applied by its top-left branch is equal to that applied by its top-right branch (that is, if the length of the left rod multiplied by the weight hanging from that rod is equal to the corresponding product for the right side) and if each of the submobiles hanging off its branches is balanced. Design a predicate that tests whether a binary mobile is balanced.
+; c. A mobile is said to be balanced if the torque applied by its top-left branch is equal to that applied by its top-right branch (that is, if the length of the left rod multiplied by the weight hanging from that rod is equal to the corresponding product for the right side) and if each of the submobiles hanging off its branches is balanced. Design a predicate that tests whether a binary mobile is balanced.
   
-  (define (is-balanced? mobile)
+(define (is-balanced? mobile)
   (define (branch-torque branch)
-  (* (branch-weight branch) (branch-length branch)))
+    (* (branch-weight branch) (branch-length branch)))
   
   (define (branch-balanced? branch)
-  (if (pair? (branch-structure branch))
-  (is-balanced? (branch-structure branch))
-  #t))
+    (if (pair? (branch-structure branch))
+      (is-balanced? (branch-structure branch))
+      #t))
   
   (and (= (branch-torque (left-branch mobile)) (branch-torque (right-branch mobile)))
-  (branch-balanced? (left-branch mobile))
-  (branch-balanced? (right-branch mobile))))
+       (branch-balanced? (left-branch mobile))
+       (branch-balanced? (right-branch mobile))))
   
   
   (define branch-a (make-branch 3 10))
