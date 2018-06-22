@@ -1,6 +1,7 @@
-(define (accumulate proc initial sequence)
-  (if (null? sequence) 
+(define (accumulate op initial sequence)
+  (if (null? sequence)
     initial
-    (accumulate proc (proc initial (car sequence)) (cdr sequence))))
+    (op (car sequence)
+        (accumulate op initial (cdr sequence)))))
 
 (accumulate * 1 (list 1 2 3 4)) ;24
