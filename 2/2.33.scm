@@ -16,6 +16,6 @@
 
 (define (length sequence) (accumulate (lambda (val accum) (+ 1 accum)) 0 sequence))
 
-(map (lambda (x) (* 2 x)) (list 1 2 3))
-(append (list 1 2 3) (list 4 5 6))
-(length (list 1 2 3 4))
+(map (lambda (x) (* 2 x)) (list 1 2 3)) ;(2 4 6)
+(append (list 1 2 3) (list 4 5 6)) ;(1 2 3 4 5 6)
+(length (list 1 2 3 4)) ;4
