@@ -1,13 +1,6 @@
 ; Exercise 2.33. Fill in the missing expressions to complete the following definitions of some basic list-manipulation operations as accumulations.
 
-; *******************************************************************
-(define (accumulate op initial sequence)
-  (if (null? sequence)
-    initial
-    (op (car sequence)
-        (accumulate op initial (cdr sequence)))))
-; *******************************************************************
-
+(load "accumulate")
 
 (define (map p sequence)
   (accumulate (lambda (val accum) (append (list (p val)) accum)) `() sequence))

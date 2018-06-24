@@ -1,15 +1,7 @@
 ; Exercise 2.35. Redefine count-leaves from section 2.2.2 as an accumulation.
 
-(define (accumulate op initial sequence)
-  (if (null? sequence)
-    initial
-    (op (car sequence)
-        (accumulate op initial (cdr sequence)))))
-
-(define (enumerate-tree tree)
-  (cond ((null? tree) tree)
-        ((pair? tree) (append (enumerate-tree (car tree)) (enumerate-tree (cdr tree))))
-        (else (list tree))))
+(load "accumulate")
+(load "enumerate")
 
 (define (count-leaves tree)
   ; 1. Enumerate the leaves of the tree (i.e. fringe)

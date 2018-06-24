@@ -7,6 +7,3 @@
   (cond ((null? tree) tree)
         ((pair? tree) (append (enumerate-tree (car tree)) (enumerate-tree (cdr tree))))
         (else (list tree))))
-
-(enumerate-tree x)
-(enumerate-integer 1 5)
