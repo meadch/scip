@@ -1,11 +1,7 @@
 (load "enumerate")
-(load "append-list")
+(load "flat-map")
 (load "filter")
-(load "accumulate")
 (load "prime")
-
-(define (flat-map proc seq)
-  (accumulate append-list `() (map proc seq)))
 
 (define (ordered-pairs n) 
   (flat-map (lambda (i) 
