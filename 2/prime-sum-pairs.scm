@@ -5,8 +5,8 @@
 
 (define (ordered-pairs n) 
   (flat-map (lambda (i) 
-    (map (lambda (j) (list i j)) (enumerate-integer 1 (- i 1)))) 
-    (enumerate-integer 1 n)))
+    (map (lambda (j) (list i j)) (enumerate-interval 1 (- i 1)))) 
+    (enumerate-interval 1 n)))
 
 (define (is-pair-prime-sum? pair) (prime? (+ (car pair) (cadr pair))))
 

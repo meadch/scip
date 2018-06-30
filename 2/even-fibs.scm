@@ -5,8 +5,8 @@
       (fib-iter second (+ first second) (- limit 1))))
   (fib-iter 0 1 n))
 
-(define (enumerate-integer low high)
-  (if (> low high) `() (cons low (enumerate-integer (+ 1 low) high))))
+(define (enumerate-interval low high)
+  (if (> low high) `() (cons low (enumerate-interval (+ 1 low) high))))
 
 (define (filter predicate sequence)
   (cond ((null? sequence) `())
@@ -14,6 +14,6 @@
         (else (filter predicate (cdr sequence)))))
 
 (define (even-fibs n)
-  (filter even? (map fib (enumerate-integer 0 n))))
+  (filter even? (map fib (enumerate-interval 0 n))))
 
 (even-fibs 9) ;(0 2 8 34)

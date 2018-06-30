@@ -7,9 +7,9 @@
 (define (unique-trips n)
   (flat-map (lambda (i) 
     (flat-map (lambda (j) (map (lambda (k) (list i j k)) 
-        (enumerate-integer 1 (- j 1)))) 
-      (enumerate-integer 1 (- i 1))))
-    (enumerate-integer 1 n)))
+        (enumerate-interval 1 (- j 1)))) 
+      (enumerate-interval 1 (- i 1))))
+    (enumerate-interval 1 n)))
 
 
 (define (sum-triples n s)
