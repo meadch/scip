@@ -44,5 +44,3 @@
 
 (define (=number? exp n)
   (and (number? exp) (= exp n)))
-
-(deriv '(* (* x y) (+ x 3)) 'x)
