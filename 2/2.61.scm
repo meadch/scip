@@ -9,6 +9,6 @@
 
 (define (adjoin-set val set)
   (cond ((null? set) (cons val))
+        ((= val (car set)) set)
         ((< val (car set)) (cons val set))
-        ((not (element-of-set? val set)) (cons val set))
-        (else set)))
+        ((> val (car set)) (cons (car set) (adjoin-set val (cdr set))))))
