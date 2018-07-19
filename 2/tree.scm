@@ -1,5 +1,3 @@
-(load "accumulate")
-
 (define (make-tree entry left right)
   (list entry left right))
 (define (entry tree)
@@ -31,5 +29,4 @@
   (define (copy-to-list tree result)
     (if (null? tree) result
         (copy-to-list (left-branch tree) (cons (entry tree) (copy-to-list (right-branch tree) result)))))
-        
   (copy-to-list tree `()))
