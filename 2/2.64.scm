@@ -12,3 +12,7 @@
                                 ;    5
                                 ; 1     9
                                 ;  3   7 11
+
+; b. What is the order of growth in the number of steps required by list->tree to convert a list of n elements?
+
+; Visits each element once (performing cons each time). Treating cons as constant, the number of steps grows in proportion to size of list: O(n).
