@@ -49,8 +49,6 @@
         (else (cons (car set) 
                     (adjoin-set x (cdr set))))))
 
-(load "accumulate.scm")
-
 (define (make-leaf-set pairs)
   (if (null? pairs) `()
       (let ((p (car pairs)))
