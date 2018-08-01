@@ -13,7 +13,7 @@
                       (make-code-tree (car nodes) (cadr nodes))
                       (cddr nodes)))))
 
-(define leaves (make-leaf-set (list (cons 'A 4) (cons 'B 2) (cons 'C 1) (cons 'D 1))))
+(define leaves (make-leaf-set '(('A 4) ('B 2) ('C 1) ('D 1))))
 
 (successive-merge leaves)
 

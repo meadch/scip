@@ -52,5 +52,5 @@
 (define (make-leaf-set pairs)
   (if (null? pairs) `()
       (let ((p (car pairs)))
-           (adjoin-set (make-leaf (car p) (cdr p))
+           (adjoin-set (make-leaf (car p) (cadr p))
                        (make-leaf-set (cdr pairs))))))

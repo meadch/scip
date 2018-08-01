@@ -9,7 +9,11 @@
 ; Encode-symbol is a procedure, which you must write, that returns the list of bits that encodes a given symbol according to a given tree. You should design encode-symbolso that it signals an error if the symbol is not in the tree at all. 
 
 (load "huffman-trees.scm")
-(load "set.scm")
+
+(define (element-of-set? x set)
+  (cond ((null? set) false)
+        ((equal? x (car set)) true)
+        (else (element-of-set? x (cdr set)))))
 
 (define (encode-symbol symbol tree)
   (define (matching-leaf? symbol tree)
