@@ -8,7 +8,7 @@
 (put 'equ? '(scheme-number scheme-number) =)
 
 ; Inside install-rational-package
-(put 'equ? '(scheme-number scheme-number) 
+(put 'equ? '(rational rational) 
   (lambda (a b) (= (* (numer a) (denom b)) (* numer b) (denom a))))
 
 ; Inside install-complex-package
