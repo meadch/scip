@@ -1,4 +1,4 @@
-[Lecture 13](https://archive.org/details/ucberkeley_webcast_kbqJ3UGPgOc)
+- [x] [Lecture 13](https://archive.org/details/ucberkeley_webcast_kbqJ3UGPgOc)
 
 * `deep-map` on different tree structures
 * Two recursive calls performed => *tree recursion*
